@@ -1,0 +1,35 @@
+<h2> Users</h2>
+<div>
+    <label>ID:
+        <input #userId />
+    </label>
+    <label>First Name:
+        <input #userFirstName />
+    </label>
+    <label>Last Name:
+        <input #userLastName />
+    </label>
+    <label>Email Address:
+        <input #userEmailAddress />
+    </label>
+    <label>Username:
+        <input #userUserName />
+    </label>
+    <label>Password:
+        <input #userPassWord />
+    </label>
+    <button (click)="add(userId.value, userFirstName.value, userLastName.value,
+    userEmailAddress.value, userUserName.value, userPassWord.value);
+    userId.value = ''; userFirstName.value=''; userLastName.value=''; userEmailAddress.value='';
+    userUserName.value=''; userPassWord.value=''">Add</button>
+</div>
+<ul class="users">
+    <li *ngFor="let user of users">
+        <a routerLink="/detail/{{user.id}}">
+            <span class="badge"><!--{{user.id}}--> {{user.lastName}}, </span> {{user.firstName}}
+        </a>
+        <button class="delete" title="delete User" (click)="delete(user)">x</button>
+    </li>
+</ul>
+<button (click)="getUsers()">Test Button</button>
+
