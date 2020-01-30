@@ -10,8 +10,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { RegisterUserComponent } from './register-user/register-user.component';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     ChoresComponent,
     UserDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterUserComponent
   ],
   imports: [
     FormsModule,
@@ -29,10 +31,10 @@ import { InMemoryDataService } from './in-memory-data.service';
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    // // Remove it when a real server is ready to receive requests.
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

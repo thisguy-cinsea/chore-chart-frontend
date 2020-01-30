@@ -1,6 +1,6 @@
 <div *ngIf="user">
     <h2>{{user.lastName | uppercase}}, {{user.firstName}}: Details</h2>
-    <div><span>ID: </span>{{user.id}}</div>
+    <div><span>ID: </span>{{user.userId}}</div>
     <div>
         <label>First Name:
             <input [(ngModel)]="user.firstName" placeholder="First Name"/>
@@ -12,13 +12,13 @@
         </label>
     </div>
     <div>
-        <label>Username:
-            <input [(ngModel)]="user.userName" placeholder="Username"/>
+        <label>Email:
+            <input [(ngModel)]="user.email" placeholder="Email Address"/>
         </label>
     </div>
     <div>
-        <label>Email:
-            <input [(ngModel)]="user.emailAddress" placeholder="Email Address"/>
+        <label>Username:
+            <input [(ngModel)]="user.userName" placeholder="Username"/>
         </label>
     </div>
     <div>

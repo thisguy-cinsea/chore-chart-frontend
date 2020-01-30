@@ -1,0 +1,24 @@
+<h2> Users</h2>
+<div>
+    <label>First Name:
+        <input #userFirstName />
+    </label><br>
+    <label>Last Name:
+        <input #userLastName />
+    </label><br>
+    <label>Email Address:
+        <input #userEmailAddress />
+    </label><br>
+    <label>Username:
+        <input #userUserName />
+    </label><br>
+    <label>Password:
+        <input #userPassWord />
+    </label><br>
+    <button (click)="add(userFirstName.value, userLastName.value,
+    userEmailAddress.value, userUserName.value, userPassWord.value);
+    userFirstName.value=''; userLastName.value=''; userEmailAddress.value='';
+    userUserName.value=''; userPassWord.value=''">Register</button>&nbsp;
+    <button (click)="goBack()">Cancel</button>
+
+</div>

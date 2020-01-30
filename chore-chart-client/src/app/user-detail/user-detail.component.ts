@@ -35,6 +35,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   save(): void {
+    console.log("userDetail.save ", this.user);
     this.userService.updateUser(this.user)
       .subscribe(() => this.goBack());
   }

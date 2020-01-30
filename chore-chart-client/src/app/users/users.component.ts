@@ -10,16 +10,7 @@ import { Observable } from 'rxjs';
 })
 
 export class UsersComponent implements OnInit {
-  users: User[]=[
-      {
-        id: "1",
-        firstName:"Will",
-        lastName:"Ancona",
-        emailAddress:"w.ancona@gmail.com",
-        userName:"w.ancona",
-        passWord:"password123"
-      }
-  ];
+  users: User[];
 
   constructor(private userService: UserService) { }
 
@@ -29,31 +20,16 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers(): void {
-    // alert("get users is working")
+    console.log("get users is working");
     this.userService.getUsers()
-      .subscribe(users => {
-        console.log(users);
-        this.users.forEach( user => users.push(user));
-      });
+      .subscribe(users => this.users = users)
   }
 
-  add(id: string, firstName: string, lastName: string, emailAddress: string, 
-    userName: string, passWord: string): void {
-      id = id.trim();
-      firstName = firstName.trim();
-      lastName = lastName.trim();
-      emailAddress = emailAddress.trim();
-      userName = userName.trim();
-      passWord = passWord.trim();
-      if (!firstName) { return; }
-      this.userService.addUser({id, firstName, lastName, emailAddress,
-        userName, passWord } as User)
-        .subscribe(user => { this.users.push(user);
-      });
-    }
-  
+
+
   delete(user: User): void {
     this.users = this.users.filter(u => u !== user);
+    console.log(this.users);
     this.userService.deleteUser(user).subscribe();
   }
 
